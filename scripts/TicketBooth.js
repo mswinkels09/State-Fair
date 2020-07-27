@@ -31,16 +31,21 @@ eventHub.addEventListener("click", clickEvent => {
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "fullPackageTicket") {
-               
-        const contentTarget = document.querySelectorAll(".people");
-        
+
         const ticketEvent = new CustomEvent("fullPackageTicketPurchased")
         
-        contentTarget.innerHTML += `<div class="person bigSpender"></div>`
         
         eventHub.dispatchEvent(ticketEvent)
     }
-                })
+})
+
+
+export const fullPackageTicketHolders = () => {
+    eventHub.addEventListener("fullPackageTicketPurchased", customEvent => {
+        contentTarget.innerHTML += `<div class="person bigSpender"></div>`
+        const contentTarget = document.querySelectorAll(".people");
+    })
+}
         
 
 
