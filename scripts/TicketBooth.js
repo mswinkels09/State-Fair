@@ -30,23 +30,10 @@ eventHub.addEventListener("click", clickEvent => {
                 })
 
 eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "fullPackageTicket") {
-
+    if (clickEvent.target.id === "fullPackageTicket") {       
         const ticketEvent = new CustomEvent("fullPackageTicketPurchased")
-        
-        
-        eventHub.dispatchEvent(ticketEvent)
-    }
-})
-
-
-export const fullPackageTicketHolders = () => {
-    eventHub.addEventListener("fullPackageTicketPurchased", customEvent => {
-        contentTarget.innerHTML += `<div class="person bigSpender"></div>`
-        const contentTarget = document.querySelectorAll(".people");
-    })
-}
-        
+        eventHub.dispatchEvent(ticketEvent)}
+                })
 
 
 export const TicketBooth = () => {
